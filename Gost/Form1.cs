@@ -66,18 +66,12 @@ namespace Gost
                 MessageBox.Show("Введите 256-битный ключ");
             else
             {
-                key = System.Text.Encoding.Unicode.GetBytes(key_dec);
-                
-                text = System.Text.Encoding.Unicode.GetBytes(text_dec);
-                foreach (byte a in text)
-                    MessageBox.Show(a.ToString());
+                key = System.Text.Encoding.Unicode.GetBytes(key_dec);                
+                text = System.Text.Encoding.Unicode.GetBytes(text_dec);               
                 D32 d32 = new D32(text, key);
-                byte[] rezult = d32.GetDecryptFile;
-               // foreach (byte a in text)
-                 //   MessageBox.Show(a.ToString());
+                byte[] rezult = d32.GetDecryptFile;               
                 tb_enc_text.Text = Encoding.Unicode.GetString(rezult);
-            }
-            
+            }            
         }
     }
 }
